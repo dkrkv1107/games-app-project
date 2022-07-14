@@ -19,19 +19,23 @@ function App() {
 
 
   function asc() {
-
-    setGames(games.sort((a, b) => {
+    var old = [...games]
+    setGames(old.sort((a, b) => {
       return a.score - b.score;
-    })
+    }))
+  }
 
-    )
+  function desc() {
+    var old = [...games]
+    setGames(old.sort((a, b) => {
+      return b.score - a.score;
+    }))
 
-    console.log(games);
   }
 
 
   return (
-    // <img src={backimg} className="backimg" alt="backimg" />
+
     <div className="App">
       <div className="main">
         <header className="header">Games Store</header>
@@ -47,7 +51,7 @@ function App() {
               <button className="dropbtn">Sort by Score</button>
               <div className="dropdown-content">
                 <a onClick={asc} href="#">Asc</a>
-                <a href="#">Desc</a>
+                <a onClick={desc} href="#">Desc</a>
               </div>
             </div>
           </div>
@@ -75,6 +79,7 @@ function App() {
                 </div>
               );
             })}
+
         </div>
       </div>
     </div>
