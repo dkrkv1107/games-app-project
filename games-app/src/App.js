@@ -2,7 +2,6 @@ import Axios from "axios";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import GamerCard from "./GamerCard";
-import backimg from "./images/backimg.jpeg";
 
 
 function App() {
