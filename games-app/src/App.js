@@ -2,6 +2,7 @@ import Axios from "axios";
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import GamerCard from "./GamerCard";
+import backimg from "./images/backimg.jpeg";
 
 
 function App() {
@@ -10,15 +11,14 @@ function App() {
     var result = await Axios.get(url);
     setGames(result.data);
   }
-  const [search, setSearch] = useState("");
-  const [games, setGames] = useState([]);
-
-  useEffect(() => {
+   useEffect(() => {
     getData();
   }, []);
 
+  const [search, setSearch] = useState("");
+  const [games, setGames] = useState([]);
 
-  function asc() {
+   function asc() {
     var old = [...games]
     setGames(old.sort((a, b) => {
       return a.score - b.score;
@@ -37,7 +37,7 @@ function App() {
   return (
 
     <div className="App">
-      <div className="main">
+      <div className="mai">
         <header className="header">Games Store</header>
         <form className="main">
           <div className="main-search">
